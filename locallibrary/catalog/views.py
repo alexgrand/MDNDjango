@@ -32,5 +32,8 @@ def index(request):
 class BookListView(generic.ListView):
     model = Book
     context_object_name = 'my_book_list'# your own name for the list as a template variable
-    queryset = Book.objects.filter(title__icontains='Halo')[:5] # Get 5 books containing the title Halo
+    queryset = Book.objects.filter(title__icontains='War')[:5] # Get 5 books containing the title Halo
     template_name = 'books/my_arbitraty_template_name_list.html'  # Specify your own template name/
+
+class BookDetailView(generic.DetailView):
+    model = Book
